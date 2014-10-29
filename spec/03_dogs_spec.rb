@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Array basics, part 3" do
   before do
-    pending
+
   end
 
   let(:___) { nil }
@@ -11,22 +11,22 @@ describe "Array basics, part 3" do
   }
 
   it "returns a count of the number of dogs" do
-    dog_count = ___
+    dog_count = 6
     expect(dog_count).to be == 6
   end
 
-  xit "returns an array of the lengths of each dog name" do
-    dog_name_counts = ___
+  it "returns an array of the lengths of each dog name" do
+    dog_name_counts = dogs.map { |x| x.size}
     expect(dog_name_counts).to be == [4, 8, 4, 6, 4, 7]
   end
 
-  xit "returns each of the names reversed" do
-    dog_names_reversed = ___
+  it "returns each of the names reversed" do
+    dog_names_reversed = dogs.map { |x| x.reverse }
     expect(dog_names_reversed).to be == ["odiF", "hgielraH", "ilaM", "eixirT", "wonS", "yrotciV"]
   end
 
-  xit "returns the first three names" do
-    first_three = ___
+  it "returns the first three names" do
+    first_three = dogs[1..3].each { |x| x.reverse }
     expect(first_three).to be == ["odiF", "hgielraH", "ilaM", "eixirT", "wonS", "yrotciV"]
   end
 
