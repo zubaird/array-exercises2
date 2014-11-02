@@ -26,22 +26,23 @@ describe "Array basics, part 3" do
   end
 
   it "returns the first three names" do
-    first_three = dogs[1..3].each { |x| x.reverse }
+    first_three = dogs.map { |x| x.reverse }
     expect(first_three).to be == ["odiF", "hgielraH", "ilaM", "eixirT", "wonS", "yrotciV"]
   end
 
-  xit "returns a reversed case of the dog names" do
-    dog_names_reverse_cased = ___
+  it "returns a reversed case of the dog names" do
+    dog_names_reverse_cased = dogs.map { |x| x.capitalize.swapcase }
     expect(dog_names_reverse_cased).to be == ["fIDO", "hARLEIGH", "mALI", "tRIXIE", "sNOW", "vICTORY"]
   end
 
-  xit "returns a sum of the lengths of each of the names" do
-    sum_of_name_lengths = ___
+  it "returns a sum of the lengths of each of the names" do
+    sum_of_name_lengths = dogs.join("").length
     expect(sum_of_name_lengths).to be == 33
   end
 
-  xit "returns all the dogs whose names are longer that 4 characters" do
-    long_names = ___
+  it "returns all the dogs whose names are longer that 4 characters" do
+    long_names = []
+    dogs.each { |x| long_names.push x if x.size > 4}
     expect(long_names).to be == ["Harleigh", "Trixie", "Victory"]
   end
 end
